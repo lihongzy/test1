@@ -1,0 +1,38 @@
+# -*- coding: utf-8 -*-
+import pandas as pd
+
+print("=" * 60)
+print("原始数据概览")
+print("=" * 60)
+original_data = pd.read_csv(r"d:\postgraduate\20260207\workplace\data\[张永平]XiaMen2024-共享单车、电单车.csv")
+print(f"总记录数: {len(original_data)}")
+print(f"用户数: {original_data['user_guid'].nunique()}")
+print(f"车辆类型分布:\n{original_data['bike_type'].value_counts()}")
+
+print("\n" + "=" * 60)
+print("处理后数据概览")
+print("=" * 60)
+processed_data = pd.read_csv(r"d:\postgraduate\20260207\workplace\paper1\output\processed_trips.csv")
+print(f"总记录数: {len(processed_data)}")
+print(f"用户数: {processed_data['user_guid'].nunique()}")
+print(f"车辆类型分布:\n{processed_data['bike_type'].value_counts()}")
+
+print("\n" + "=" * 60)
+print("用户统计对比")
+print("=" * 60)
+user_stats = pd.read_csv(r"d:\postgraduate\20260207\workplace\paper1\output\user_statistics.csv", index_col=0)
+print(f"有效用户数: {len(user_stats)}")
+print(f"\n用户类型分布:")
+print(user_stats['user_type'].value_counts())
+
+print("\n" + "=" * 60)
+print("数据筛选流程")
+print("=" * 60)
+print("1. 原始数据: 457,264 条")
+print("2. 异常数据剔除后: 375,496 条")
+print("   - 地域筛选(厦门主城区)")
+print("   - 时间筛选(1-120分钟)")
+print("   - 距离筛选(>=100米)")
+print("3. 用户筛选后: 88,580 条 (5,331名用户)")
+print("   - 使用天数 >= 3 天")
+print("   - 出行次数 >= 12 次")

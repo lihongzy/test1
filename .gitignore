@@ -1,0 +1,33 @@
+# 排除大文件目录
+/data/
+/paper1/output/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 数据和输出文件
+*.csv
+*.json
+*.geojson
+*.html
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
