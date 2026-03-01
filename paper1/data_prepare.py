@@ -16,8 +16,10 @@ import numpy as np
 from math import radians, sin, cos, sqrt, atan2
 import os
 
-DATA_PATH = r"d:\postgraduate\20260207\workplace\data\[张永平]XiaMen2024-共享单车、电单车.csv"
-OUTPUT_DIR = r"d:\postgraduate\20260207\workplace\paper1\output"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+DATA_PATH = os.path.join(BASE_DIR, "data", "[张永平]XiaMen2024-共享单车、电单车.csv")
+OUTPUT_DIR = os.path.join(BASE_DIR, "paper1", "output")
 
 DBS_TYPE = "单车"
 EBS_TYPE = "助力车"

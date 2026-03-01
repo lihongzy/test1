@@ -9,10 +9,10 @@ import numpy as np
 import json
 import os
 
-# 数据文件路径
-DATA_PATH = r"d:\postgraduate\20260207\workplace\data\[张永平]XiaMen2024-共享单车、电单车.csv"
-# 输出目录
-OUTPUT_DIR = r"d:\postgraduate\20260207\workplace\visual"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+DATA_PATH = os.path.join(BASE_DIR, "data", "[张永平]XiaMen2024-共享单车、电单车.csv")
+OUTPUT_DIR = os.path.join(BASE_DIR, "visual")
 
 def load_and_process_data():
     """加载并处理共享单车骑行数据"""

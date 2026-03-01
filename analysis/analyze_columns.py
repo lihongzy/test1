@@ -1,6 +1,8 @@
+import os
 import pandas as pd
 
-DATA_PATH = r"d:\postgraduate\20260207\workplace\data\[张永平]XiaMen2024-共享单车、电单车.csv"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_PATH = os.path.join(BASE_DIR, "data", "[张永平]XiaMen2024-共享单车、电单车.csv")
 
 df = pd.read_csv(DATA_PATH)
 print("所有列名:")

@@ -3,8 +3,10 @@ import numpy as np
 import json
 import os
 
-DATA_PATH = r"d:\postgraduate\20260207\workplace\data\[张永平]XiaMen2024-共享单车、电单车.csv"
-OUTPUT_DIR = r"d:\postgraduate\20260207\workplace\visual"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+DATA_PATH = os.path.join(BASE_DIR, "data", "[张永平]XiaMen2024-共享单车、电单车.csv")
+OUTPUT_DIR = os.path.join(BASE_DIR, "visual")
 OUTPUT_JSON = os.path.join(OUTPUT_DIR, "map_data.json")
 
 def load_and_process_data():

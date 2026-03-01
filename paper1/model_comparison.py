@@ -19,11 +19,14 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.utils.class_weight import compute_class_weight
 import warnings
+import os
 warnings.filterwarnings('ignore')
 
-TRAVEL_CHARS_PATH = r"d:\postgraduate\20260207\workplace\paper1\output\travel_characteristics.csv"
-USER_STATS_PATH = r"d:\postgraduate\20260207\workplace\paper1\output\user_statistics.csv"
-OUTPUT_DIR = r"d:\postgraduate\20260207\workplace\paper1\output"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+TRAVEL_CHARS_PATH = os.path.join(BASE_DIR, "paper1", "output", "travel_characteristics.csv")
+USER_STATS_PATH = os.path.join(BASE_DIR, "paper1", "output", "user_statistics.csv")
+OUTPUT_DIR = os.path.join(BASE_DIR, "paper1", "output")
 
 LEARNING_RATES = [0.1, 0.05, 0.01]
 MAX_DEPTHS = [5, 10, 20]

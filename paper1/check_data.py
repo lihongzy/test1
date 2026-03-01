@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
+import os
 import pandas as pd
 
-data_path = r"d:\postgraduate\20260207\workplace\data\[张永平]XiaMen2024-共享单车、电单车.csv"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+data_path = os.path.join(BASE_DIR, "data", "[张永平]XiaMen2024-共享单车、电单车.csv")
 df = pd.read_csv(data_path)
 print(f"总记录数: {len(df)}")
 print(f"\n车辆类型分布:")

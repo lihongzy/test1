@@ -11,10 +11,13 @@
 
 import pandas as pd
 import numpy as np
+import os
 
-TRIPS_PATH = r"d:\postgraduate\20260207\workplace\paper1\output\processed_trips.csv"
-PRIMARY_LOCATIONS_PATH = r"d:\postgraduate\20260207\workplace\paper1\output\user_primary_locations.csv"
-OUTPUT_PATH = r"d:\postgraduate\20260207\workplace\paper1\output\travel_characteristics.csv"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+TRIPS_PATH = os.path.join(BASE_DIR, "paper1", "output", "processed_trips.csv")
+PRIMARY_LOCATIONS_PATH = os.path.join(BASE_DIR, "paper1", "output", "user_primary_locations.csv")
+OUTPUT_PATH = os.path.join(BASE_DIR, "paper1", "output", "travel_characteristics.csv")
 
 print("=" * 60)
 print("计算出行特征变量的描述性统计")

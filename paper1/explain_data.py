@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
+import os
 import pandas as pd
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 print("=" * 60)
 print("原始数据概览")
 print("=" * 60)
-original_data = pd.read_csv(r"d:\postgraduate\20260207\workplace\data\[张永平]XiaMen2024-共享单车、电单车.csv")
+original_data = pd.read_csv(os.path.join(BASE_DIR, "data", "[张永平]XiaMen2024-共享单车、电单车.csv"))
 print(f"总记录数: {len(original_data)}")
 print(f"用户数: {original_data['user_guid'].nunique()}")
 print(f"车辆类型分布:\n{original_data['bike_type'].value_counts()}")
@@ -12,7 +15,7 @@ print(f"车辆类型分布:\n{original_data['bike_type'].value_counts()}")
 print("\n" + "=" * 60)
 print("处理后数据概览")
 print("=" * 60)
-processed_data = pd.read_csv(r"d:\postgraduate\20260207\workplace\paper1\output\processed_trips.csv")
+processed_data = pd.read_csv(os.path.join(BASE_DIR, "paper1", "output", "processed_trips.csv"))
 print(f"总记录数: {len(processed_data)}")
 print(f"用户数: {processed_data['user_guid'].nunique()}")
 print(f"车辆类型分布:\n{processed_data['bike_type'].value_counts()}")
@@ -20,7 +23,7 @@ print(f"车辆类型分布:\n{processed_data['bike_type'].value_counts()}")
 print("\n" + "=" * 60)
 print("用户统计对比")
 print("=" * 60)
-user_stats = pd.read_csv(r"d:\postgraduate\20260207\workplace\paper1\output\user_statistics.csv", index_col=0)
+user_stats = pd.read_csv(os.path.join(BASE_DIR, "paper1", "output", "user_statistics.csv"), index_col=0)
 print(f"有效用户数: {len(user_stats)}")
 print(f"\n用户类型分布:")
 print(user_stats['user_type'].value_counts())

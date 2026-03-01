@@ -18,9 +18,11 @@ import os
 import warnings
 warnings.filterwarnings('ignore')
 
-INPUT_TRIPS_PATH = r"d:\postgraduate\20260207\workplace\paper1\output\processed_trips.csv"
-INPUT_USER_STATS_PATH = r"d:\postgraduate\20260207\workplace\paper1\output\user_statistics.csv"
-OUTPUT_DIR = r"d:\postgraduate\20260207\workplace\paper1\output"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+INPUT_TRIPS_PATH = os.path.join(BASE_DIR, "paper1", "output", "processed_trips.csv")
+INPUT_USER_STATS_PATH = os.path.join(BASE_DIR, "paper1", "output", "user_statistics.csv")
+OUTPUT_DIR = os.path.join(BASE_DIR, "paper1", "output")
 
 K_NEIGHBORS = 5
 
